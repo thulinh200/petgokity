@@ -1,1 +1,36 @@
-hi
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+  end
+
+		
+			
+spawn(function()
+game:GetService("RunService"):Set3dRenderingEnabled(false)
+		for _, v in pairs(game.Players:GetChildren()) do
+        	for _, v2 in pairs(v.Character:GetDescendants()) do
+                    if v2:IsA("BasePart") or v2:IsA("Decal") then
+                        v2.Transparency = 1
+                    end
+                end
+        end
+				
+    while true do
+        task.wait(30)
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v ~= game.Players.LocalPlayer then
+                pcall(function()
+                    local Character = v.Character
+                    Character:Destroy()
+                end)
+            end
+        end
+    end
+end)
+
+getgenv().LoadSettings = {["Items"] = {["Fruits"] = {["Max"] = 5, ["Fruits"] = {"Watermelon", "Apple", "Rainbow", "Pineapple", "Orange", "Banana"}, ["Craft"] = true, ["Use"] = true}, ["Potions"] = {["Potions"] = {"Walkspeed Potion", "Coins Potion", "Breakables Potion"}, ["CraftPotions"] = {"Lucky Potion", "Coins Potion", "Breakables Potion", "Faster Rolls Potion", "Items Potion", "Walkspeed Potion", "Golden Dice Potion", "Rainbow Dice Potion", "Instant Luck Potion", "The Cocktail"}, ["Tier"] = 3, ["Craft"] = true, ["Use"] = true}, ["Relics"] = true}, ["Farming"] = {["UpgradeGroups"] = {"Luckier", "Root", "Trading", "Fruit", "Hoverboard", "Leveling", "Lucky Potion", "Small Coin Piles"}, ["Index"] = true, ["Upgrades"] = true, ["Rarities"] = {"Exclusive", "Mythical", "Exotic", "Celestial", "Superior", "Secret", "Divine"}, ["Roll"] = true, ["IndexOffers"] = {"IndexMerchant - Lucky Potion III", "IndexMerchant - Coins Potion III", "IndexMerchant - Breakables Potion II", "IndexMerchant - Faster Rolls Potion", "IndexMerchant - Lucky Potion II", "IndexMerchant - Coins Potion II", "IndexMerchant - Breakables Potion I", "IndexMerchant - Lucky Potion I", "IndexMerchant - Coins Potion I", "AdvancedIndexMerchant - Instant Luck Potion III", "AdvancedIndexMerchant - Instant Luck Potion II", "AdvancedIndexMerchant - Instant Luck Potion I", "AdvancedIndexMerchant - Lucky Potion V", "AdvancedIndexMerchant - Rainbow Dice Potion", "AdvancedIndexMerchant - Coins Potion V", "AdvancedIndexMerchant - Breakables Potion II", "AdvancedIndexMerchant - Lucky Potion IV", "AdvancedIndexMerchant - Golden Dice Potion", "AdvancedIndexMerchant - Faster Rolls Potion", "AdvancedIndexMerchant - Coins Potion IV"}, ["Vending"] = true, ["Method"] = "Multi", ["Gifts"] = true, ["PetsPerBreakable"] = 1, ["Digging"] = true, ["MailHatches"] = true, ["Webhook"] = "https://discord.com/api/webhooks/1181449233031774308/3o6eqg-LoUuew33uetNLuIr7LrSOVNVRILd9v6ME6Cm-vuZ4oEq8vaR6x2tt618xeKM1", ["SendIndex"] = false, ["Start"] = true, ["Username"] = "kethemhanh3", ["SendHatches"] = false, ["Prio"] = false}, ["ForceVIP"] = false, ["UIScale"] = 1, ["LoadSettings"] = true, ["Optimize"] = {["Pets"] = true, ["Drops"] = true, ["Breakables"] = true, ["Scripts"] = true, ["GUIs"] = true, ["World"] = true}}
+		
+script_key = "ScBhsimeZAntpSoyfoBNhnGseYCEULXp";
+
+daubuoi = true
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/b22aae7d03041699ada62f6a4fb519fd.lua"))()
