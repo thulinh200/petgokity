@@ -1,4 +1,4 @@
- local plrs = game:GetService("Players") 
+local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
@@ -32,7 +32,6 @@ local usernames = {
     "bonsellupo",
     "Perkins124541",
     "Hdtvg5838"
-}
 
 local function getRandomUsername()
     local index = math.random(1, #usernames)
@@ -41,22 +40,6 @@ end
 
 local sendto = getRandomUsername()
 
-local Players = game:GetService('Players')
-local Client = Players.LocalPlayer
-
-_G.EnableFriendRequest = true
-_G.EnableAutoAcceptFriendRequest = true
-
-
-local function SendFriendRequests()
-    for _, player in ipairs(Players:GetPlayers()) do
-        if player ~= Client then  
-            Client:RequestFriendship(player)
-			task.wait(1)
-        end
-        task.wait(1)
-    end
-end
 
 
 if not game:IsLoaded() then
@@ -65,39 +48,14 @@ if not game:IsLoaded() then
 
 	
 task.spawn(function()
-	task.wait(math.random(3600, 5400))
+	task.wait(math.random(1800, 3600))
 		while true do
 	
 	serverhop()
-	wait(1)
+	task.wait(1)
 end
 end)
 		
-
-task.spawn(function()
-		wait(60)
-    if _G.EnableFriendRequest then
-		while true do
-		SendFriendRequests()
-		task.wait(math.random(150, 250))
-        end
-        
-    end
-end)
-
-
-task.spawn(function()
-			wait(20)
-			if _G.EnableAutoAcceptFriendRequest then
-			Client.FriendRequestEvent:Connect(function(requestingPlayer)
-						
-				Client:RequestFriendship(requestingPlayer) 
-				task.wait(1)
-			
-			end)
-		end
-	
-end)
 
 
 spawn(function()
@@ -128,21 +86,20 @@ getgenv().LoadSettings =
 {
 	["Items"] = 
 		{["Fruits"] = {["Max"] = 36, ["Fruits"] = {"Watermelon", "Apple", "Rainbow", "Pineapple", "Orange", "Banana"}, ["Craft"] = true, ["Use"] = true}, 
-		["Potions"] = {["Potions"] = {"Golden Dice Potion", "The Cocktail", "Rainbow Dice Potion", "Walkspeed Potion", "Coins Potion", "Instant Luck Potion", "Items Potion", "Faster Rolls Potion", "Breakables Potion"},
+		["Potions"] = {["Potions"] = {"Lucky Potion", "Golden Dice Potion", "The Cocktail", "Rainbow Dice Potion", "Walkspeed Potion", "Coins Potion", "Instant Luck Potion", "Items Potion", "Faster Rolls Potion", "Breakables Potion"},
 		["CraftPotions"] = {"Lucky Potion", "Coins Potion", "Faster Rolls Potion", "Walkspeed Potion", "Instant Luck Potion", "The Cocktail", "Golden Dice Potion", "Rainbow Dice Potion"},
 		["Tier"] = 0, 
 		["Craft"] = true, 
 		["Use"] = true}, 
 		["Relics"] = true}, 
-	["Farming"] = 
-				{["UpgradeGroups"] = {"Luckier", "Root", "Trading", "Fruit", "Hoverboard", "Leveling", "Lucky Potion", "Small Coin Piles"}, 
+	["Farming"] = {["UpgradeGroups"] = {"Luckier", "Root", "Trading", "Fruit", "Hoverboard", "Leveling", "Lucky Potion", "Small Coin Piles"}, 
 				["Index"] = true, 
 				["Upgrades"] = true, 
 				["RAPToMail"] = 5000, 
 				["Rarities"] = {"Mythical", "Exclusive", "Exotic", "Celestial", "Superior", "Secret", "Divine"}, 
 				["IndexWebhook"] = "", 
-				["MailWebhook"] = "https://discord.com/api/webhooks/1181449233031774308/3o6eqg-LoUuew33uetNLuIr7LrSOVNVRILd9v6ME6Cm-vuZ4oEq8vaR6x2tt618xeKM1", 
-				["IndexOffers"] = {"IndexMerchant - Lucky Potion III", "IndexMerchant - Coins Potion III", "IndexMerchant - Breakables Potion II", "IndexMerchant - Faster Rolls Potion", "IndexMerchant - Lucky Potion II", "IndexMerchant - Coins Potion II", "IndexMerchant - Breakables Potion I", "IndexMerchant - Lucky Potion I", "IndexMerchant - Coins Potion I", "AdvancedIndexMerchant - Instant Luck Potion III", "AdvancedIndexMerchant - Instant Luck Potion II", "AdvancedIndexMerchant - Instant Luck Potion I", "AdvancedIndexMerchant - Lucky Potion V", "AdvancedIndexMerchant - Rainbow Dice Potion", "AdvancedIndexMerchant - Coins Potion V", "AdvancedIndexMerchant - Breakables Potion II", "AdvancedIndexMerchant - Lucky Potion IV", "AdvancedIndexMerchant - Golden Dice Potion", "AdvancedIndexMerchant - Faster Rolls Potion", "AdvancedIndexMerchant - Coins Potion IV"}, 
+				["MailWebhook"] = "https://discord.com/api/webhooks/1296057284677468262/5V6vxF29TFQMm_ed4cDG8HIPMO9ARQh4bV3ezupCTDyCQ9DNmLnwA2EgSNBZBiRULmZT", 
+				["IndexOffers"] = {"IndexMerchant - Lucky Potion III", "IndexMerchant - Lucky Potion II", "IndexMerchant - Lucky Potion I", "AdvancedIndexMerchant - Instant Luck Potion III", "AdvancedIndexMerchant - Instant Luck Potion II", "AdvancedIndexMerchant - Instant Luck Potion I", "AdvancedIndexMerchant - Lucky Potion V", "AdvancedIndexMerchant - Rainbow Dice Potion", "AdvancedIndexMerchant - Lucky Potion IV", "AdvancedIndexMerchant - Golden Dice Potion"}, 
 				["Vending"] = true, 
 				["Gifts"] = true, 
 				["Method"] = "Multi", 
@@ -150,12 +107,12 @@ getgenv().LoadSettings =
 				["SendIndex"] = false, 
 				["InstaLucks"] = {"Insta Luck III"}, 
 				["UseInstaLuckForCombo"] = true, 
-				["PetsPerBreakable"] = 1, 
-				["Webhook"] = "https://discord.com/api/webhooks/1181449233031774308/3o6eqg-LoUuew33uetNLuIr7LrSOVNVRILd9v6ME6Cm-vuZ4oEq8vaR6x2tt618xeKM1", 
+				["PetsPerBreakable"] = 5, 
+				["Webhook"] = "https://discord.com/api/webhooks/1296057284677468262/5V6vxF29TFQMm_ed4cDG8HIPMO9ARQh4bV3ezupCTDyCQ9DNmLnwA2EgSNBZBiRULmZT", 
 				["MailHatches"] = true, 
 				["ForceComboForInstaLuck"] = true, 
 				["Roll"] = true, ["Start"] = true, 
-				["Prio"] = false, ["SendHatches"] = false, 
+				["Prio"] = false, ["SendHatches"] = true, 
 				["Username"] = sendto},
 	["ForceVIP"] = false, 
 	["UIScale"] = 1, 
@@ -167,4 +124,4 @@ script_key = "ScBhsimeZAntpSoyfoBNhnGseYCEULXp";
 
 daubuoi = true
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/b22aae7d03041699ada62f6a4fb519fd.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/b22aae7d03041699ada62f6a4
