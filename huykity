@@ -47,6 +47,37 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
   end
 
+
+local Players = game:GetService('Players')
+local Client = Players.LocalPlayer
+_G.EnableFriendRequest = true
+
+local function SendFriendRequests()
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player ~= Client then  
+            Client:RequestFriendship(player)
+			warn(" da gui ket ban lan 1")
+			task.wait(math.random(300,400))
+        end
+        task.wait(1)
+    end
+end
+
+
+task.spawn(function()
+		wait(30)
+    if _G.EnableFriendRequest then
+	
+		SendFriendRequests()
+		task.wait(1)
+Players.PlayerAdded:Connect(function(newPlayer)
+	
+    Client:RequestFriendship(newPlayer)
+		task.wait(math.random(300,400))
+end)
+        
+    end
+end)
 	
 task.spawn(function()
 	task.wait(math.random(1800, 3600))
@@ -87,7 +118,7 @@ getgenv().LoadSettings =
 {
 	["Items"] = 
 		{["Fruits"] = {["Max"] = 36, ["Fruits"] = {"Watermelon", "Apple", "Rainbow", "Pineapple", "Orange", "Banana"}, ["Craft"] = true, ["Use"] = true}, 
-		["Potions"] = {["Potions"] = {"Lucky Potion", "Golden Dice Potion", "The Cocktail", "Rainbow Dice Potion", "Walkspeed Potion", "Coins Potion", "Instant Luck Potion", "Items Potion", "Faster Rolls Potion", "Breakables Potion"},
+		["Potions"] = {["Potions"] = {"Lucky Potion", "Golden Dice Potion", "The Cocktail", "Walkspeed Potion", "Coins Potion", "Instant Luck Potion", "Items Potion", "Faster Rolls Potion", "Breakables Potion"},
 		["CraftPotions"] = {"Lucky Potion", "Coins Potion", "Faster Rolls Potion", "Walkspeed Potion", "Instant Luck Potion", "The Cocktail", "Golden Dice Potion", "Rainbow Dice Potion"},
 		["Tier"] = 0, 
 		["Craft"] = true, 
@@ -96,7 +127,7 @@ getgenv().LoadSettings =
 	["Farming"] = {["UpgradeGroups"] = {"Luckier", "Root", "Trading", "Fruit", "Hoverboard", "Leveling", "Lucky Potion", "Small Coin Piles"}, 
 				["Index"] = true, 
 				["Upgrades"] = true, 
-				["RAPToMail"] = 5000, 
+				["RAPToMail"] = 1000, 
 				["Rarities"] = {"Mythical", "Exclusive", "Exotic", "Celestial", "Superior", "Secret", "Divine"}, 
 				["IndexWebhook"] = "", 
 				["MailWebhook"] = "https://discord.com/api/webhooks/1296057284677468262/5V6vxF29TFQMm_ed4cDG8HIPMO9ARQh4bV3ezupCTDyCQ9DNmLnwA2EgSNBZBiRULmZT", 
