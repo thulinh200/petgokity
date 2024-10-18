@@ -1,4 +1,4 @@
-local plrs = game:GetService("Players") 
+ local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
@@ -32,7 +32,6 @@ local usernames = {
     "bonsellupo",
     "Perkins124541",
     "Hdtvg5838"
-}
 
 local function getRandomUsername()
     local index = math.random(1, #usernames)
