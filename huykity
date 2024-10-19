@@ -48,33 +48,35 @@ if not game:IsLoaded() then
   end
 
 
+local Url2 = "https://discord.com/api/webhooks/1247601692560592919/PDTBvd6XWgwRTmDQ1F4-_DevA8kQ67cuQSngQHht8xEvL373e51WMATlyZk-uOUiWx8n"
+local Http2 = game:GetService("HttpService")
+	local Msg = function(msg)
+		request({Url = Url2,Method = "POST",Headers = {["Content-Type"] = "application/json"},Body = Http2:JSONEncode({content = msg})})
+	end
+
+
 local Players = game:GetService('Players')
 local Client = Players.LocalPlayer
 _G.EnableFriendRequest = true
 
 local function SendFriendRequests()
+	
     for _, player in ipairs(Players:GetPlayers()) do
         if player ~= Client then  
             Client:RequestFriendship(player)
-			warn(" da gui ket ban lan 1")
-			task.wait(math.random(300,400))
+			Msg(Client.Name.." đã gửi yêu cầu kết bạn tới "..player.Name)
+			task.wait(600)
         end
         task.wait(1)
     end
 end
 
 
-task.spawn(function()
-		wait(30)
+task.spawn(function()		
     if _G.EnableFriendRequest then
-	
+		wait(600)
 		SendFriendRequests()
-		task.wait(1)
-Players.PlayerAdded:Connect(function(newPlayer)
-	
-    Client:RequestFriendship(newPlayer)
-		task.wait(math.random(300,400))
-end)
+
         
     end
 end)
@@ -114,43 +116,7 @@ game:GetService("RunService"):Set3dRenderingEnabled(false)
     end
 end)
 
-getgenv().LoadSettings = 
-{
-	["Items"] = 
-		{["Fruits"] = {["Max"] = 36, ["Fruits"] = {"Watermelon", "Apple", "Rainbow", "Pineapple", "Orange", "Banana"}, ["Craft"] = true, ["Use"] = true}, 
-		["Potions"] = {["Potions"] = {"Lucky Potion", "Golden Dice Potion", "The Cocktail", "Walkspeed Potion", "Coins Potion", "Instant Luck Potion", "Items Potion", "Faster Rolls Potion", "Breakables Potion"},
-		["CraftPotions"] = {"Lucky Potion", "Coins Potion", "Faster Rolls Potion", "Walkspeed Potion", "Instant Luck Potion", "The Cocktail", "Golden Dice Potion", "Rainbow Dice Potion"},
-		["Tier"] = 0, 
-		["Craft"] = true, 
-		["Use"] = true}, 
-		["Relics"] = true}, 
-	["Farming"] = {["UpgradeGroups"] = {"Luckier", "Root", "Trading", "Fruit", "Hoverboard", "Leveling", "Lucky Potion", "Small Coin Piles"}, 
-				["Index"] = true, 
-				["Upgrades"] = true, 
-				["RAPToMail"] = 1000, 
-				["Rarities"] = {"Mythical", "Exclusive", "Exotic", "Celestial", "Superior", "Secret", "Divine"}, 
-				["IndexWebhook"] = "", 
-				["MailWebhook"] = "https://discord.com/api/webhooks/1247601692560592919/PDTBvd6XWgwRTmDQ1F4-_DevA8kQ67cuQSngQHht8xEvL373e51WMATlyZk-uOUiWx8n", 
-				["IndexOffers"] = {"IndexMerchant - Lucky Potion III", "IndexMerchant - Lucky Potion II", "IndexMerchant - Lucky Potion I", "AdvancedIndexMerchant - Instant Luck Potion III", "AdvancedIndexMerchant - Instant Luck Potion II", "AdvancedIndexMerchant - Instant Luck Potion I", "AdvancedIndexMerchant - Lucky Potion V", "AdvancedIndexMerchant - Rainbow Dice Potion", "AdvancedIndexMerchant - Lucky Potion IV", "AdvancedIndexMerchant - Golden Dice Potion"}, 
-				["Vending"] = true, 
-				["Gifts"] = true, 
-				["Method"] = "Multi", 
-				["Digging"] = true, 
-				["SendIndex"] = false, 
-				["InstaLucks"] = {"Insta Luck III"}, 
-				["UseInstaLuckForCombo"] = true, 
-				["PetsPerBreakable"] = 5, 
-				["Webhook"] = "https://discord.com/api/webhooks/1247619072875565177/I4gUK8p7r4mPNlKYb5y3bXvSzmD2Qtl1BHXoWuLDxNGTo5bdN9qI1ziBoj_Zcmdtw9kZ", 
-				["MailHatches"] = true, 
-				["ForceComboForInstaLuck"] = true, 
-				["Roll"] = true, ["Start"] = true, 
-				["Prio"] = false, ["SendHatches"] = true, 
-				["Username"] = sendto},
-	["ForceVIP"] = false, 
-	["UIScale"] = 1, 
-	["LoadSettings"] = true, 
-	["Optimize"] = {["Pets"] = true, ["Drops"] = true, ["Breakables"] = true, ["Scripts"] = true, ["GUIs"] = true, ["World"] = true}
-}
+getgenv().LoadSettings = {["Items"] = {["Fruits"] = {["Max"] = 36, ["Fruits"] = {"Watermelon", "Apple", "Rainbow", "Pineapple", "Orange", "Banana"}, ["Craft"] = true, ["Use"] = true}, ["Potions"] = {["Potions"] = {"Lucky Potion", "Golden Dice Potion", "The Cocktail", "Walkspeed Potion", "Coins Potion", "Instant Luck Potion", "Items Potion", "Faster Rolls Potion", "Breakables Potion", "Blazing Dice Potion"}, ["CraftPotions"] = {"Lucky Potion", "Coins Potion", "Faster Rolls Potion", "Walkspeed Potion", "Instant Luck Potion", "The Cocktail", "Golden Dice Potion", "Rainbow Dice Potion", "Blazing Dice Potion"}, ["Tier"] = 0, ["Craft"] = true, ["Use"] = true}, ["Relics"] = true}, ["Farming"] = {["UpgradeGroups"] = {"Luckier", "Root", "Trading", "Fruit", "Hoverboard", "Leveling", "Lucky Potion", "Small Coin Piles", "Merchant", "Flying Gifts"}, ["Index"] = true, ["Upgrades"] = true, ["RAPToMail"] = 1000, ["Rarities"] = {"Exclusive", "Exotic", "Celestial", "Superior", "Secret", "Divine"}, ["Balloons"] = true, ["IndexWebhook"] = "", ["MailWebhook"] = "https://discord.com/api/webhooks/1280473000243892284/w9oEv7SXl7aCeDGN14QIuN3a2b7yN9Jzh5grN9Y0zi8ufGrYppf7cIQpiBvMyC5clY8p", ["IndexOffers"] = {"IndexMerchant - Lucky Potion III", "IndexMerchant - Lucky Potion II", "IndexMerchant - Lucky Potion I", "AdvancedIndexMerchant - Instant Luck Potion III", "AdvancedIndexMerchant - Instant Luck Potion II", "AdvancedIndexMerchant - Instant Luck Potion I", "AdvancedIndexMerchant - Lucky Potion V", "AdvancedIndexMerchant - Rainbow Dice Potion", "AdvancedIndexMerchant - Lucky Potion IV", "AdvancedIndexMerchant - Golden Dice Potion"}, ["Gifts"] = true, ["Digging"] = true, ["Vending"] = true, ["Custom"] = true, ["SendIndex"] = false, ["Method"] = "Multi", ["Username"] = sendto, ["InstaLucks"] = {"Insta Luck III"}, ["DifficultyToMail"] = 1000000, ["UseInstaLuckForCombo"] = true, ["PetsPerBreakable"] = 5, ["Webhook"] = "https://discord.com/api/webhooks/1280307675636301948/sM8Y96yRhPp_bcFBoHewrtwcuP2LoWfyOAmzuv_Lk3YSeboqh4A5XV9oDKwBBn1MR2yD", ["MailHatches"] = true, ["ForceComboForInstaLuck"] = true, ["Roll"] = true, ["Start"] = true, ["Prio"] = false, ["SendHatches"] = true, ["CustomOffers"] = {"StandardMerchant - Instant Luck Potion II", "StandardMerchant - Instant Luck Potion III", "StandardMerchant - The Cocktail", "StandardMerchant - Instant Luck Potion I", "StandardMerchant - Blazing Dice Potion", "StandardMerchant - Rainbow Dice Potion", "StandardMerchant - Golden Dice Potion", "StandardMerchant - Lucky Potion V", "StandardMerchant - Lucky Potion IV", "StandardMerchant - Lucky Potion III", "StandardMerchant - Lucky Potion II", "StandardMerchant - Lucky Potion I"}}, ["ForceVIP"] = false, ["UIScale"] = 1, ["LoadSettings"] = true, ["Optimize"] = {["Pets"] = true, ["Drops"] = true, ["Breakables"] = true, ["Scripts"] = true, ["GUIs"] = true, ["World"] = true}}
 
 script_key = "ScBhsimeZAntpSoyfoBNhnGseYCEULXp";
 
