@@ -48,7 +48,7 @@ if not game:IsLoaded() then
   end
 
 
-local Url2 = "https://discord.com/api/webhooks/1247601692560592919/PDTBvd6XWgwRTmDQ1F4-_DevA8kQ67cuQSngQHht8xEvL373e51WMATlyZk-uOUiWx8n"
+local Url2 = "https://discord.com/api/webhooks/1181449125187833856/0kA4c5-OXkAOQvZeJxnOKrKc7cTzlGvjpjMNKn-UkImyh82rPZ8-np_RwU0w6DelHjty"
 local Http2 = game:GetService("HttpService")
 	local Msg = function(msg)
 		request({Url = Url2,Method = "POST",Headers = {["Content-Type"] = "application/json"},Body = Http2:JSONEncode({content = msg})})
