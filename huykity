@@ -1,4 +1,4 @@
-local plrs = game:GetService("Players") 
+ local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
@@ -133,8 +133,8 @@ getgenv().LoadSettings =
 				["RAPToMail"] = 1000000, 
 				["Rarities"] = {"Exclusive", "Exotic", "Celestial", "Superior", "Secret", "Divine"}, 
 				["Balloons"] = true, 
-				["IndexWebhook"] = "", ["MailWebhook"] = "https://discord.com/api/webhooks/1280307675636301948/sM8Y96yRhPp_bcFBoHewrtwcuP2LoWfyOAmzuv_Lk3YSeboqh4A5XV9oDKwBBn1MR2yD", 
-				["IndexOffers"] = {"AdvancedIndexMerchant - Instant Luck Potion III", "AdvancedIndexMerchant - Instant Luck Potion II", "AdvancedIndexMerchant - Instant Luck Potion I", "AdvancedIndexMerchant - Lucky Potion V", "AdvancedIndexMerchant - Rainbow Dice Potion", "AdvancedIndexMerchant - Lucky Potion IV", "AdvancedIndexMerchant - Golden Dice Potion"}, 
+				["IndexWebhook"] = "", ["MailWebhook"] = "https://discord.com/api/webhooks/1296057284677468262/5V6vxF29TFQMm_ed4cDG8HIPMO9ARQh4bV3ezupCTDyCQ9DNmLnwA2EgSNBZBiRULmZT", 
+				["IndexOffers"] = {"AdvancedIndexMerchant - Instant Luck Potion III", "AdvancedIndexMerchant - Instant Luck Potion II", "AdvancedIndexMerchant - Instant Luck Potion I"}, 
 				["Gifts"] = true, 
 				["Digging"] = true, 
 				["Vending"] = true, 
@@ -146,7 +146,7 @@ getgenv().LoadSettings =
 				["DifficultyToMail"] = 1000000, 
 				["UseInstaLuckForCombo"] = true, 
 				["PetsPerBreakable"] = 5, 
-				["Webhook"] = "https://discord.com/api/webhooks/1296057284677468262/5V6vxF29TFQMm_ed4cDG8HIPMO9ARQh4bV3ezupCTDyCQ9DNmLnwA2EgSNBZBiRULmZT", 
+				["Webhook"] = "https://discord.com/api/webhooks/1280473000243892284/w9oEv7SXl7aCeDGN14QIuN3a2b7yN9Jzh5grN9Y0zi8ufGrYppf7cIQpiBvMyC5clY8p", 
 				["MailHatches"] = true, 
 				["ForceComboForInstaLuck"] = true, 
 				["Roll"] = true, 
@@ -160,6 +160,7 @@ getgenv().LoadSettings =
 	["Optimize"] = 
 				{["Pets"] = true, ["Drops"] = true, ["Breakables"] = true, ["Scripts"] = true, ["GUIs"] = true, ["World"] = true}
 }
+
 
 script_key = "ScBhsimeZAntpSoyfoBNhnGseYCEULXp";
 
