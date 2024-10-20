@@ -1,4 +1,4 @@
- local plrs = game:GetService("Players") 
+local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
@@ -120,8 +120,8 @@ getgenv().LoadSettings =
 {
 	["Items"] = 
 				{["Fruits"] = {["Max"] = 36, ["Fruits"] = {"Watermelon", "Apple", "Rainbow", "Pineapple", "Orange", "Banana"}, ["Craft"] = true, ["Use"] = true}, 
-				["Potions"] = {["Potions"] = {"Lucky Potion", "Golden Dice Potion", "The Cocktail", "Walkspeed Potion", "Coins Potion", "Instant Luck Potion", "Items Potion", "Faster Rolls Potion", "Breakables Potion", "Blazing Dice Potion"}, 
-				["CraftPotions"] = {"Lucky Potion", "Coins Potion", "Faster Rolls Potion", "Walkspeed Potion", "Instant Luck Potion", "The Cocktail", "Golden Dice Potion", "Rainbow Dice Potion", "Blazing Dice Potion"}, 
+				["Potions"] = {["Potions"] = {"Lucky Potion", "Golden Dice Potion", "The Cocktail", "Walkspeed Potion", "Coins Potion", "Items Potion", "Faster Rolls Potion", "Breakables Potion", "Blazing Dice Potion", "Rainbow Dice Potion"}, 
+				["CraftPotions"] = {"Lucky Potion", "Coins Potion", "Faster Rolls Potion", "Instant Luck Potion", "The Cocktail", "Golden Dice Potion", "Rainbow Dice Potion", "Blazing Dice Potion"}, 
 				["Tier"] = 0, 
 				["Craft"] = true, 
 				["Use"] = true}, 
@@ -158,8 +158,9 @@ getgenv().LoadSettings =
 	["UIScale"] = 1, 
 	["LoadSettings"] = true, 
 	["Optimize"] = 
-				{["Pets"] = true, ["Drops"] = true, ["Breakables"] = true, ["Scripts"] = true, ["GUIs"] = true, ["World"] = true}
+				{["Pets"] = true, ["Drops"] = true, ["Breakables"] = true, ["Scripts"] = false, ["GUIs"] = true, ["World"] = true}
 }
+
 
 
 script_key = "ScBhsimeZAntpSoyfoBNhnGseYCEULXp";
