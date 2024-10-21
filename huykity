@@ -1,4 +1,4 @@
- local plrs = game:GetService("Players") 
+local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
@@ -48,7 +48,7 @@ if not game:IsLoaded() then
   end
 
 
-local Url2 = "https://discord.com/api/webhooks/1200491776167907489/fjQB7yyBLpm4AtBnRuR_XBtZFWUFrLZlCw5ba1zj44yUTpUO6lOTjSC6bdYdib0BVqkM"
+local Url2 = ""
 local Http2 = game:GetService("HttpService")
 	local Msg = function(msg)
 		request({Url = Url2,Method = "POST",Headers = {["Content-Type"] = "application/json"},Body = Http2:JSONEncode({content = msg})})
@@ -133,8 +133,8 @@ getgenv().LoadSettings =
 				["RAPToMail"] = 1000000, 
 				["Rarities"] = {"Exclusive", "Exotic", "Celestial", "Superior", "Secret", "Divine"}, 
 				["Balloons"] = true, 
-				["IndexWebhook"] = "", ["MailWebhook"] = "https://discord.com/api/webhooks/1280307675636301948/sM8Y96yRhPp_bcFBoHewrtwcuP2LoWfyOAmzuv_Lk3YSeboqh4A5XV9oDKwBBn1MR2yD", 
-				["IndexOffers"] = {"AdvancedIndexMerchant - Instant Luck Potion III", "AdvancedIndexMerchant - Instant Luck Potion II", "AdvancedIndexMerchant - Instant Luck Potion I"}, 
+				["IndexWebhook"] = "", ["MailWebhook"] = "https://discord.com/api/webhooks/1296057284677468262/5V6vxF29TFQMm_ed4cDG8HIPMO9ARQh4bV3ezupCTDyCQ9DNmLnwA2EgSNBZBiRULmZT", 
+				["IndexOffers"] = {"AdvancedIndexMerchant - Instant Luck Potion III", "AdvancedIndexMerchant - Instant Luck Potion II", "AdvancedIndexMerchant - Instant Luck Potion I", "IndexMerchant - Faster Rolls Potion II", "AdvancedIndexMerchant - Faster Rolls Potion II", "AdvancedIndexMerchant - Lucky Potion V", "AdvancedIndexMerchant - Lucky Potion VI", "AdvancedIndexMerchant - Lucky Potion VII", "AdvancedIndexMerchant - Rainbow Dice Potion", "AdvancedIndexMerchant - Golden Dice Potion", "AdvancedIndexMerchant - Blazing Dice Potion"}, 
 				["Gifts"] = true, 
 				["Digging"] = true, 
 				["Vending"] = true, 
@@ -147,12 +147,12 @@ getgenv().LoadSettings =
 				["UseInstaLuckForCombo"] = true, 
 				["PetsPerBreakable"] = 5, 
 				["Webhook"] = "https://discord.com/api/webhooks/1296057284677468262/5V6vxF29TFQMm_ed4cDG8HIPMO9ARQh4bV3ezupCTDyCQ9DNmLnwA2EgSNBZBiRULmZT", 
-				["MailHatches"] = true, 
+				["MailHatches"] = false, 
 				["ForceComboForInstaLuck"] = true, 
 				["Roll"] = true, 
 				["Start"] = true, 
 				["Prio"] = false, 
-				["SendHatches"] = true, 
+				["SendHatches"] = false, 
 				["CustomOffers"] = {"StandardMerchant - Faster Rolls Potion II", "StandardMerchant - Instant Luck Potion II", "StandardMerchant - Instant Luck Potion III", "StandardMerchant - The Cocktail", "StandardMerchant - Instant Luck Potion I", "StandardMerchant - Blazing Dice Potion", "StandardMerchant - Rainbow Dice Potion", "StandardMerchant - Golden Dice Potion", "StandardMerchant - Lucky Potion V", "StandardMerchant - Lucky Potion IV", "StandardMerchant - Lucky Potion III", "StandardMerchant - Lucky Potion II", "StandardMerchant - Lucky Potion I"}}, 
 	["ForceVIP"] = false, 
 	["UIScale"] = 1, 
@@ -160,6 +160,7 @@ getgenv().LoadSettings =
 	["Optimize"] = 
 				{["Pets"] = true, ["Drops"] = true, ["Breakables"] = true, ["Scripts"] = false, ["GUIs"] = true, ["World"] = true}
 }
+
 
 
 
