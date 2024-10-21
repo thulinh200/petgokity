@@ -22,16 +22,16 @@ local function serverhop()
 end
 
 local usernames = {
-    "zubizarretamensje",
-    "diasretno95",
-    "acharzaimumford",
-    "Gfdd34556",
-    "tralee827968",
-    "GgGgBGox",
-    "Bugbh7948",
-    "bonsellupo",
-    "Perkins124541",
-    "Hdtvg5838"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
 }
 
 local function getRandomUsername()
